@@ -1,0 +1,216 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  /* background-color: #333; */
+}
+
+nav {
+  font-family: "Montserrat", sans-serif;
+  background-color: red;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid #333;
+}
+
+/* Style the navigation links */
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 10px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 10px;
+  grid-template-rows: 50px 1fr 150px 150px 150px 150px 250px 50px;
+  gap: 10px 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". page-header page-header page-header page-header page-header page-header page-header page-header ."
+    ". intro-gallery intro-gallery intro-gallery intro-gallery intro-gallery intro-gallery intro-gallery intro-gallery ."
+    ". intro-gallery intro-gallery intro-gallery intro-gallery intro-gallery intro-gallery intro-gallery intro-gallery ."
+    ". intro-gallery intro-gallery intro-gallery intro-gallery intro-gallery intro-gallery intro-gallery intro-gallery ."
+    ". countdown countdown countdown countdown resources resources resources resources ."
+    ". video video video video resources resources resources resources ."
+    ". video video video video resources resources resources resources ."
+    ". footer footer footer footer footer footer footer footer .";
+}
+
+.page-header {
+  grid-area: page-header;
+  width: 100%;
+}
+
+.intro-gallery {
+  font-family: "Montserrat", sans-serif;
+  grid-area: intro-gallery;
+  width: 100%;
+  height: 100%;
+}
+
+.intro-gallery .introduction {
+  margin-top: 150px;
+}
+
+.intro-gallery h1 {
+  font-size: 50px;
+  font-style: italic;
+}
+
+.intro-gallery p {
+  font-size: 20px;
+}
+
+.intro-gallery .introduction {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+.intro-gallery .image-container {
+  position: relative;
+  max-height: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.intro-gallery .image-container img {
+  width: 100%;
+  filter: blur(2.5px);
+  opacity: 0.8;
+  transition: opacity 0.5s;
+  object-fit: cover;
+  margin: auto;
+}
+
+.image-credit {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 98%;
+  text-align: center;
+  opacity: 0.3;
+}
+
+.intro-gallery .image-container:hover img {
+  opacity: 1;
+}
+
+.countdown {
+  grid-area: countdown;
+  background-color: whitesmoke;
+}
+
+.countdown-header {
+  background-color: red;
+  color: white;
+  font-size: 20px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.countdown .countdown-widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3px;
+}
+
+.countdown-widget p {
+  display: block;
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.resources {
+  grid-area: resources;
+  background-color: whitesmoke;
+}
+
+.resources-header {
+  background-color: red;
+  color: white;
+  font-size: 20px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.resource-list {
+  margin: 20px;
+  list-style-type: none;
+}
+
+.resource-list a {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.resource-list p {
+  font-size: 16px;
+}
+
+.video {
+  grid-area: video;
+  background-color: whitesmoke;
+}
+
+.video-car {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 100%;
+}
+
+.video-car p {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.video-car iframe {
+  width: 80%;
+  height: 250px;
+}
+
+.video-header {
+  background-color: red;
+  color: white;
+  font-size: 20px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content {
+  text-align: center;
+  align-self: center;
+  color: white;
+}
